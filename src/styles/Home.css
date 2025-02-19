@@ -1,0 +1,90 @@
+/* Home.css */
+
+.home {
+    background-image: url('../assets/Home.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Ajusta verticalmente */
+    text-align: center;
+    padding: 0 20px;
+    width: 100%; /* Garante que a div ocupe 100% da largura da tela */
+    max-width: 100%; /* Evita que a div tenha um tamanho fixo */
+    flex-grow: 1; /* Faz com que a div cresça para ocupar o máximo de espaço possível */
+}
+
+
+.home h1, .home h2 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Ajuste de cor para o nome e título */
+.home h1 {
+    color: #2c3e50; /* Cor mais escura */
+    font-size: 5rem; /* Tamanho maior */
+}
+
+.home h2 {
+    color: #34495e; /* Cor mais escura */
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Ajustes para a área principal (main) */
+main {
+    width: 100%; /* Garante que o main ocupe toda a largura disponível */
+    padding: 1rem 0;
+}
+
+.home main a {
+    background-color: #69a8ec;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.home main a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .home {
+        padding: 0 15px;
+    }
+
+    .home h1 {
+        font-size: 3rem; /* Ajuste do tamanho do nome */
+    }
+
+    .home h2 {
+        font-size: 1.5rem; /* Ajuste do tamanho do título */
+    }
+
+    .home main a {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Ajustes para telas grandes (acima de 1024px) */
+@media (min-width: 1024px) {
+    .home {
+        padding: 0 40px; /* Maior padding para telas grandes */
+    }
+
+    .home h1 {
+        font-size: 6rem; /* Tamanho maior para o nome */
+    }
+
+    .home h2 {
+        font-size: 2.5rem; /* Tamanho maior para o título */
+    }
+}

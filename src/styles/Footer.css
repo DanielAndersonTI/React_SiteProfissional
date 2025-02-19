@@ -1,0 +1,35 @@
+.footer {
+    background-color: #bebbbb; 
+    color: rgb(23, 20, 20); 
+    text-align: center; 
+    padding: 1rem; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif; 
+    font-size: 0.9rem; 
+}
+
+
+.footer-content {
+    margin-top: 1rem;
+}
+
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.name {
+    margin-left: 0.5rem; 
+}

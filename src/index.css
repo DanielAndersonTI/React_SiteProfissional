@@ -1,0 +1,62 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+
+.div-container {
+  display: flex; /* Usando flexbox para layout flexível */
+  flex-direction: column; /* Inicialmente, os itens vão ser empilhados verticalmente */
+  align-items: center; /* Alinha o conteúdo no centro horizontalmente */
+  justify-content: center; /* Alinha o conteúdo no centro verticalmente */
+  height: 100vh; /* Garante que a div ocupe a altura da tela */
+  text-align: center; /* Garante que o texto fique centralizado */
+}
+
+.div-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.div-container h2 {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .div-container {
+    flex-direction: column; /* Garante que os itens sejam empilhados na vertical */
+    padding: 10px;
+  }
+
+  .div-container h1 {
+    font-size: 2rem; /* Ajusta o tamanho do título para telas menores */
+  }
+
+  .div-container h2 {
+    font-size: 1.2rem; /* Ajusta o subtítulo para telas menores */
+  }
+}
+
+/* Responsividade para telas grandes */
+@media (min-width: 1024px) {
+  .div-container {
+    flex-direction: row; /* Em telas grandes, coloca os itens na horizontal */
+    justify-content: space-around; /* Espaça os itens ao longo da linha */
+  }
+
+  .div-container h1, .div-container h2 {
+    font-size: 3rem; /* Ajusta o tamanho para telas grandes */
+  }
+}

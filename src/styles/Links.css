@@ -1,0 +1,16 @@
+.links {
+    text-align: center;
+    padding: 2rem;
+}
+
+.links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #d8dee3;
+    font-weight: bold;
+}
+
+.home main a:hover {
+    text-decoration: underline;
+    color: #151616;
+}
