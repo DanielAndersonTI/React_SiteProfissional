@@ -1,16 +1,32 @@
 .links {
-    text-align: center;
-    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.links a {
-    margin: 0 1rem;
+.link-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
     text-decoration: none;
-    color: #d8dee3;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 25px;
     font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.home main a:hover {
-    text-decoration: underline;
-    color: #151616;
+.link-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003f80);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: 30px;
 }

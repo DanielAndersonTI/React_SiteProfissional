@@ -4,50 +4,49 @@
     background-image: url('../assets/Home.webp');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Ajusta verticalmente */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 0 20px;
-    width: 100%; /* Garante que a div ocupe 100% da largura da tela */
-    max-width: 100%; /* Evita que a div tenha um tamanho fixo */
-    flex-grow: 1; /* Faz com que a div cresça para ocupar o máximo de espaço possível */
+    padding: 0 15px;
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
 }
-
 
 .home h1, .home h2 {
     margin: 0;
     text-transform: uppercase;
 }
 
-/* Ajuste de cor para o nome e título */
 .home h1 {
-    color: #2c3e50; /* Cor mais escura */
-    font-size: 5rem; /* Tamanho maior */
+    color: #2c3e50;
+    font-size: 6vw;
+    max-font-size: 3.5rem;
 }
 
 .home h2 {
-    color: #34495e; /* Cor mais escura */
-    font-size: 2rem;
-    margin-top: 10px;
+    color: #34495e;
+    font-size: 3vw;
+    margin-top: 5px;
 }
 
-/* Ajustes para a área principal (main) */
 main {
-    width: 100%; /* Garante que o main ocupe toda a largura disponível */
+    width: 100%;
     padding: 1rem 0;
 }
 
 .home main a {
     background-color: #69a8ec;
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .home main a:hover {
@@ -55,36 +54,117 @@ main {
     color: white;
 }
 
-/* Ajustes para responsividade */
+/* Estilização do menu de navegação */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.top-nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #4e4e4f, #1f1f1f);
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: 'Georgia', serif;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-nav ul li a:hover {
+    background: linear-gradient(135deg, #1f1f1f, #4e4e4f);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para telas menores */
 @media (max-width: 768px) {
     .home {
-        padding: 0 15px;
+        padding: 0 10px;
+        min-height: 60vh;
     }
 
     .home h1 {
-        font-size: 3rem; /* Ajuste do tamanho do nome */
+        font-size: 8vw;
     }
 
     .home h2 {
-        font-size: 1.5rem; /* Ajuste do tamanho do título */
+        font-size: 4vw;
     }
 
     .home main a {
-        padding: 1rem 1.5rem;
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 20px;
+        background: linear-gradient(135deg, #4e4e4f, #1f1f1f);
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        font-family: 'Georgia', serif;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .home main a:hover {
+        background: linear-gradient(135deg, #1f1f1f, #4e4e4f);
+        transform: scale(1.05);
+        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .top-nav ul li a {
+        width: 80%;
+        text-align: center;
     }
 }
 
-/* Ajustes para telas grandes (acima de 1024px) */
+/* Ajustes para telas grandes */
 @media (min-width: 1024px) {
     .home {
-        padding: 0 40px; /* Maior padding para telas grandes */
+        padding: 0 20px;
+        min-height: 60vh;
     }
 
     .home h1 {
-        font-size: 6rem; /* Tamanho maior para o nome */
+        font-size: 4rem;
     }
 
     .home h2 {
-        font-size: 2.5rem; /* Tamanho maior para o título */
+        font-size: 2rem;
     }
 }

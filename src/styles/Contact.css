@@ -13,6 +13,31 @@ header {
     padding: 1rem 25rem;
 }
 
+.back-home {
+    font-family: 'Georgia', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 1rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.back-home:hover {
+    background-color: #222;
+    transform: scale(1.05);
+    box-shadow: 5px, 5px, 10px rgba(0, 0, 0, 0.4);
+}
+.back-home svg{
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
 main {
     flex: 1;
     padding: 2rem;
@@ -56,7 +81,7 @@ main a {
     border-radius: 4px;
 }
 
-.contact main a:hover {
+.contact main a:not(.back-home):hover {
     background-color: #0fbb39; 
     color: white;
 }
