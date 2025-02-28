@@ -19,17 +19,20 @@ const Contact = () => {
 
   const handleFormSubmit = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/contact", formData); 
+      const response = await axios.post("http://localhost:5000/api/contact", formData, { 
+        headers: { "Content-Type": "application/json" }
+      }); // 🔹 Corrigida a URL para garantir que chama a API corretamente
+
       if (response.data.success) {
-        setMessage("Mensagem enviada com sucesso!");
+        setMessage(response.data.message);
         setMessageType("success");
       } else {
-        setMessage("Falha ao enviar mensagem.");
+        setMessage("Falha ao salvar os dados.");
         setMessageType("error");
       }
     } catch (error) {
-      console.error(error);
-      setMessage("Erro ao enviar mensagem.");
+      console.error("Erro ao enviar:", error);
+      setMessage("Erro ao salvar os dados.");
       setMessageType("error");
     }
   };
@@ -39,27 +42,17 @@ const Contact = () => {
       <Header />
 
       <main>
-        
         <Link to="/" className="back-home">
           <Home className="w-5 h-5 inline-block mr-2" /> Home
         </Link>
 
         <h2>Contato</h2>
 
-        {message && (
-          <span className={`message ${messageType}`}>
-            {message}
-          </span>
-        )}
+        {message && <span className={`message ${messageType}`}>{message}</span>}
 
         <ContactForm onSubmit={handleFormSubmit} />
 
-        <a
-          href="http://wa.me/5583988660079"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleWhatsAppClick}
-        >
+        <a href="http://wa.me/5583988660079" target="_blank" rel="noopener noreferrer" onClick={handleWhatsAppClick}>
           Conversar no WhatsApp
         </a>
       </main>

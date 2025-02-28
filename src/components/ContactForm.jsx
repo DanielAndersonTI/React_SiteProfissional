@@ -9,33 +9,45 @@ import axios from 'axios';
 const validationSchema = Yup.object({
   name: Yup.string().required('Nome é obrigatório'),
   phone: Yup.string()
-    .matches(/^\+?[1-9]\d{1,14}$/, 'Telefone inválido') // Corrigida regex para telefone internacional
+    .matches(/^\+?[1-9]\d{1,14}$/, 'Telefone inválido')
     .required('Telefone é obrigatório'),
   email: Yup.string().email('Email inválido').required('Email é obrigatório'),
   message: Yup.string().required('Mensagem é obrigatória'),
 });
 
-const ContactForm = ({ onSubmit }) => { // Corrigido para receber a função corretamente
+const ContactForm = ({ onSubmit }) => { 
   const formik = useFormik({
     initialValues: {
       name: '',
+      phone: '',
       email: '',
       message: '',
-      phone: '', 
     },
     validationSchema,
-    onSubmit: async (values, { resetForm }) => { 
+    onSubmit: async (values, { resetForm, setSubmitting }) => { 
       try {
-        await axios.post('http://localhost:5000/api/contact', values);
-        alert('Formulário enviado com sucesso!');
-        resetForm();
-        onSubmit(values); // Chama a função de envio para a página Contact
+        console.log("🚀 Enviando dados para Backend:", values); 
+
+        const response = await axios.post('http://localhost:5000/api/contact', values, { 
+          headers: { 'Content-Type': 'application/json' }
+        }); // 🔹 URL corrigida para apontar corretamente para o backend
+
+        console.log("✅ Resposta do Backend:", response.data); 
+
+        if (response.data.success) {
+          alert('Formulário enviado com sucesso!');
+          resetForm(); 
+          if (onSubmit) onSubmit(values); 
+        } else {
+          alert('Falha ao salvar os dados.');
+        }
       } catch (err) {
         alert('Erro ao enviar o formulário. Tente novamente mais tarde.');
-        console.error(err);
+        console.error("❌ Erro ao enviar:", err);
+      } finally {
+        setSubmitting(false); // 🔹 Permite novo envio após erro/sucesso
       }
     }
-    
   });
 
   return (
@@ -61,8 +73,8 @@ const ContactForm = ({ onSubmit }) => { // Corrigido para receber a função cor
         <PhoneInput
           id="phone"
           defaultCountry="BR"
-          value={formik.values.phone}
-          onChange={(value) => formik.setFieldValue('phone', value)} // Corrigido para evitar erros de undefined
+          value={formik.values.phone || ''} // 🔹 Garante um valor padrão
+          onChange={(value) => formik.setFieldValue('phone', value)} 
           onBlur={() => formik.setFieldTouched('phone', true)}
           className={formik.touched.phone && formik.errors.phone ? 'input-error' : ''}
         />
