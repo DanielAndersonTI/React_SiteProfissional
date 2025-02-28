@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "public": "dist",
   "routes": [
     {
       "src": "/(.*)",
@@ -8,3 +7,5 @@
     }
   ]
 }
+  
+  
