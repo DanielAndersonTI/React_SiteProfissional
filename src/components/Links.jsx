@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Links.css';
-import linkedinIcon from '../assets/Linkedin.png';  // Caminho correto para o LinkedIn
+import linkedinIcon from '../assets/Linkedin_temp.png';  // Caminho correto para o LinkedIn
 import githubIcon from '../assets/github.jpg';  // Caminho correto para o GitHub
 
 const Links = () => {
