@@ -1,13 +1,10 @@
 {
-    "build": {
-      "src": "src/",
-      "use": "@vercel/static-build"
-    },
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/index.js"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "public": "dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
