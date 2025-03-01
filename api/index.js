@@ -11,7 +11,7 @@ app.use(cors()); // 🔹 Permite requisições do frontend
 const GOOGLE_SHEETS_WEBHOOK = "https://script.google.com/macros/s/AKfycbxPEsPaPeyQi-4xWbz-HcGdigsGbOKGUPTZez1z6KFvD9MIgGUQSPm0rrBbBZmXhsHMbQ/exec";
 
 // 🔹 Rota para receber os dados do formulário e enviar para o Google Sheets
-app.post("/api/contact", async (req, res) => {
+app.post("/contact", async (req, res) => {
   try {
     console.log("📩 Recebendo dados do formulário:", req.body);
 
@@ -29,9 +29,3 @@ app.post("/api/contact", async (req, res) => {
 
 // 🔹 Exporta o app (necessário para a Vercel)
 module.exports = app;
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Backend rodando na porta ${PORT}`);
-});
-

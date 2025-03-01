@@ -19,19 +19,26 @@ const Contact = () => {
 
   const handleFormSubmit = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/contact", formData, { 
+      const API_URL = import.meta.env.VITE_BACKEND_URL || "/api/contact";
+
+
+      console.log("🚀 Enviando dados para Backend:", formData);
+
+      const response = await axios.post(API_URL, formData, { 
         headers: { "Content-Type": "application/json" }
-      }); // 🔹 Corrigida a URL para garantir que chama a API corretamente
+      });
+
+      console.log("✅ Resposta do Backend:", response.data);
 
       if (response.data.success) {
-        setMessage(response.data.message);
+        setMessage("Formulário enviado com sucesso!");
         setMessageType("success");
       } else {
         setMessage("Falha ao salvar os dados.");
         setMessageType("error");
       }
     } catch (error) {
-      console.error("Erro ao enviar:", error);
+      console.error("❌ Erro ao enviar:", error);
       setMessage("Erro ao salvar os dados.");
       setMessageType("error");
     }
