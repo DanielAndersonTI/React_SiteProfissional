@@ -6,7 +6,10 @@
     background-color:rgba(255, 255, 255, 0.1);
     border-radius: 70px;
     backdrop-filter: blur(5px);
-    margin-top: 0,25rem
+    margin-top: 0.25rem
+   
+    
+   
 }
 
 .profile-image {
@@ -32,13 +35,36 @@
 }
 
 @media (max-width: 768px){
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: flex-start;
+        border-radius: 40px; /* Reduz o radius para mobile */
+        padding: 0.8rem; /* Reduz o padding */
+
+    }
+
     .profile-image{
-        width: 30%;
+        width: 50%;
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
 }
 
 @media (max-width: 480px){
+    .profile {
+        border-radius: 30px; /* Radius menor para telas pequenas */
+        padding: 0.5rem;
+    }
+
     .profile-image {
         width: 40%;
+    }
+    .profile-info, p{
+        font-size: 0.9rend; /* Reduz o tamanho da fonte para telas pequenas */
+        text-align: left; /* Alinha o texto à esquerda para telas pequenas */
+        max-width: 300px; /* Limita a largura máxima do texto para telas pequenas */
+        overflow: hidden; /* Garante que o texto não ultrapasse os limites do container */
+        
     }
 }

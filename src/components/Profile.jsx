@@ -3,6 +3,7 @@ import ProfileImage from '../assets/Foto Portfolio.jpeg'
 import '../styles/Profile.css'; 
 const Profile = () => {
     return (
+        
         <div className="profile">
             <img src={ProfileImage} alt="Minha Foto" className="profile-image"/>
             <div className="profile-info">

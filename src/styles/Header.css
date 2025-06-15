@@ -1,7 +1,7 @@
 .header {
     width: 100%;
-    height: 250px;
-    background-image: url('/src/assets/h.imagem2.webp');
+    height: 25px; /* Altura padrão para desktop */
+    /*background-image: url('/src/assets/h.imagem2.webp');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,34 +13,79 @@
     text-align: center;
 }
 
+/* Ajusta a altura do header em telas menores */
+@media (max-width: 768px) {
+    .header {
+        height: 25px; /* Reduz um pouco a altura do header */
+        background-size: contain; /* Garante que a imagem não corte */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 25px; /* Ajusta melhor para celulares menores */
+        background-size: cover; /* Garante que a imagem se expanda corretamente */
+    }
+}
+
+/* Ajustes no menu de navegação */
 .nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 15px;
-}
-
-.nav ul li {
-    margin: 0;
+    flex-wrap: wrap; /* Permite que os itens do menu quebrem linha em telas menores */
 }
 
 .nav ul li a {
     display: inline-block;
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 10px 15px;
     background: linear-gradient(135deg, #4e4e4f, #1f1f1f);
     border-radius: 25px;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: 'Georgia', serif;
     color: white;
     transition: all 0.3s ease-in-out;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nav ul li a:hover {
-    background: linear-gradient(135deg, #1f1f1f, #4e4e4f);
-    transform: scale(1.05);
-    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+@media (max-width: 1024px) {
+    .nav ul li a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte em telas grandes */
+        padding: 8px 12px; /* Ajusta o padding para telas grandes */
+    }
+}
+
+/* Reduz um pouco o tamanho do menu em telas menores */
+@media (max-width: 768px) {
+    .nav ul {
+        gap: 10px;
+    }
+
+    .nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+.header{
+    padding: 0 10px;
+}
+
+    .nav ul {
+        gap: 3px; /* Reduz o espaçamento entre os itens do menu em telas menores */
+        padding: 0 5px; /* Padding interno para evitar overflow */
+        flex-wrap: wrap; /* Garante que os itens quebrem linha */
+    }
+
+    .nav ul li a {
+        font-size: 0.7rem; /* Ajusta ainda mais o tamanho da fonte para celulares */
+        padding: 4px 8px; /* Ajusta o padding para celulares */
+        white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+
+    }
 }

@@ -19,7 +19,7 @@ const HomePage = () => {
         <ul>
           <li>
             <Link to="/">
-              <Home className="w-5 h-5 inline-block mr-2" /> Page Home
+              <Home className="w-5 h-5 inline-block mr-2" /> Home Page
             </Link>
           </li>
           <li>

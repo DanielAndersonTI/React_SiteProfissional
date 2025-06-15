@@ -12,7 +12,7 @@ const Contact = () => {
 
       <main>
         <Link to="/" className="back-home">
-          <Home className="w-5 h-5 inline-block mr-2" /> Back to page Home
+          <Home className="w-5 h-5 inline-block mr-2" /> Back to Home Page
         </Link>
 
         <h2>Se desejar fazer um orçamento ou tirar alguma dúvida sobre um projeto futuro, 

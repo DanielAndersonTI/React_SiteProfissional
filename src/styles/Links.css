@@ -1,14 +1,18 @@
+/* Container principal dos links */
 .links {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+    padding: 0 15px; /* Adiciona padding lateral para evitar colar nas bordas */
 }
 
+/* Estilo base dos botões de link */
 .link-btn {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaço entre o ícone e o texto */
+    gap: 10px;
     text-decoration: none;
     padding: 12px 20px;
     background: linear-gradient(135deg, #007bff, #0056b3);
@@ -18,15 +22,109 @@
     color: white;
     transition: all 0.3s ease-in-out;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Evita quebra de texto */
+    min-width: max-content; /* Mantém um tamanho mínimo legível */
 }
 
+/* Efeito hover */
 .link-btn:hover {
     background: linear-gradient(135deg, #0056b3, #003f80);
     transform: scale(1.05);
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilo dos ícones */
 .icon {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    width: 30px;
     height: 30px;
+    flex-shrink: 0; /* Evita que o ícone diminua demais */
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .links {
+        gap: 12px;
+    }
+    
+    .link-btn {
+        padding: 10px 18px;
+        font-size: 1.1rem;
+    }
+    
+    .icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Tablet Pequeno (600px - 768px) */
+@media (max-width: 768px) {
+    .links {
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .link-btn {
+        padding: 8px 16px;
+        font-size: 1rem;
+        border-radius: 20px;
+    }
+    
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Celular (480px - 600px) */
+@media (max-width: 600px) {
+    .links {
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    .link-btn {
+        padding: 7px 14px;
+        font-size: 0.95rem;
+    }
+    
+    .icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Celular Pequeno (até 480px) */
+@media (max-width: 480px) {
+    .links {
+        gap: 6px;
+        margin-top: 10px;
+    }
+    
+    .link-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+        border-radius: 18px;
+        gap: 8px;
+    }
+    
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Ajuste extra para telas muito pequenas */
+@media (max-width: 360px) {
+    .link-btn {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
 }

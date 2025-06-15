@@ -1,35 +1,132 @@
 .footer {
-    background-color: #bebbbb; 
-    color: rgb(23, 20, 20); 
-    text-align: center; 
-    padding: 1rem; 
-    position: fixed; 
-    bottom: 0; 
-    width: 100%; 
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
-    font-family: Arial, sans-serif; 
-    font-size: 0.9rem; 
+    background-color: #bebbbb;
+    color: #171414;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+    box-sizing: border-box; /* Inclui padding na largura total */
 }
-
 
 .footer-content {
-    margin-top: 1rem;
+    margin: 0.5rem auto 0;
+    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 
 .footer a {
     color: #007bff;
     text-decoration: none;
-    margin: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
     font-weight: bold;
     font-family: 'Georgia', serif;
+    transition: all 0.2s ease;
+    border-radius: 4px;
 }
 
 .footer a:hover {
     text-decoration: underline;
     color: #0056b3;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .name {
-    margin-left: 0.5rem; 
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.copyright {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .footer {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+    
+    .footer-links {
+        gap: 0.4rem;
+    }
+    
+    .footer a {
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Tablet Pequeno (600px - 768px) */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+    }
+    
+    .footer-content {
+        margin-top: 0.3rem;
+    }
+    
+    .footer a {
+        font-size: 0.9em;
+    }
+}
+
+/* Celular (480px - 600px) */
+@media (max-width: 600px) {
+    .footer {
+        padding: 0.6rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
+    }
+    
+    .name {
+        margin-left: 0.3rem;
+    }
+}
+
+/* Celular Pequeno (até 480px) */
+@media (max-width: 480px) {
+    .footer {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .footer a {
+        padding: 0.15rem 0.3rem;
+    }
+    
+    .copyright {
+        font-size: 0.7em;
+    }
+}
+
+/* Ajuste para quando o teclado virtual está ativo em mobile */
+@media (max-height: 500px) {
+    .footer {
+        position: relative;
+        box-shadow: none;
+    }
 }

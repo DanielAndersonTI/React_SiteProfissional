@@ -1,62 +1,111 @@
-
+/* Reset e Estilos Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  width: 100%;
+  min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-
+/* Container Principal */
 .div-container {
-  display: flex; /* Usando flexbox para layout flexível */
-  flex-direction: column; /* Inicialmente, os itens vão ser empilhados verticalmente */
-  align-items: center; /* Alinha o conteúdo no centro horizontalmente */
-  justify-content: center; /* Alinha o conteúdo no centro verticalmente */
-  height: 100vh; /* Garante que a div ocupe a altura da tela */
-  text-align: center; /* Garante que o texto fique centralizado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
 }
 
 .div-container h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .div-container h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   color: #666;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
+/* Layout para Telas Grandes */
+@media (min-width: 1024px) {
   .div-container {
-    flex-direction: column; /* Garante que os itens sejam empilhados na vertical */
-    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem 2rem;
+  }
+
+  .div-container > * {
+    flex: 1;
+    min-width: 0;
   }
 
   .div-container h1 {
-    font-size: 2rem; /* Ajusta o tamanho do título para telas menores */
-  }
-
-  .div-container h2 {
-    font-size: 1.2rem; /* Ajusta o subtítulo para telas menores */
+    margin-bottom: 1rem;
   }
 }
 
-/* Responsividade para telas grandes */
-@media (min-width: 1024px) {
+/* Tablet (768px - 1024px) */
+@media (max-width: 1023px) {
   .div-container {
-    flex-direction: row; /* Em telas grandes, coloca os itens na horizontal */
-    justify-content: space-around; /* Espaça os itens ao longo da linha */
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Tablet Pequeno (600px - 768px) */
+@media (max-width: 768px) {
+  .div-container {
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Celular (480px - 600px) */
+@media (max-width: 600px) {
+  .div-container {
+    padding: 1.5rem 0.8rem;
   }
 
-  .div-container h1, .div-container h2 {
-    font-size: 3rem; /* Ajusta o tamanho para telas grandes */
+  .div-container h1 {
+    line-height: 1.3;
+  }
+}
+
+/* Celular Pequeno (até 480px) */
+@media (max-width: 480px) {
+  .div-container {
+    width: 95%;
+    max-width: 95%;
+    padding: 1.2rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .div-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .div-container h2 {
+    font-size: 1rem;
   }
 }

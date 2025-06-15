@@ -1,170 +1,206 @@
-/* Home.css */
-
 .home {
-    background-image: url('../assets/Home.webp');
     background-size: cover;
     background-position: center;
-    min-height: 70vh;
+    min-height: calc(100vh - 120px); /* Ajuste para considerar header/footer */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 15px;
+    padding: 2rem 1rem;
     width: 100%;
-    max-width: 100%;
-    flex-grow: 1;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .home h1, .home h2 {
     margin: 0;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
 .home h1 {
     color: #2c3e50;
-    font-size: 6vw;
-    max-font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Tamanho responsivo com limites */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .home h2 {
     color: #34495e;
-    font-size: 3vw;
-    margin-top: 5px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 2rem;
 }
 
-main {
-    width: 100%;
+.home-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.home-actions a {
+    background-color: #69a8ec;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    max-width: 250px;
+    text-align: center;
+}
+
+.home-actions a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.top-nav {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
 }
 
-.home main a {
-    background-color: #69a8ec;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.home main a:hover {
-    background-color: #0056b3;
-    color: white;
-}
-
-/* Estilização do menu de navegação */
-.top-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .top-nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.top-nav ul li {
-    margin: 0;
-    padding: 0;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .top-nav ul li a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    padding: 12px 20px;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
     background: linear-gradient(135deg, #4e4e4f, #1f1f1f);
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    font-family: 'Georgia', serif;
+    border-radius: 30px;
     color: white;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-.top-nav ul li a:hover {
-    background: linear-gradient(135deg, #1f1f1f, #4e4e4f);
-    transform: scale(1.05);
-    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+/* RESPONSIVIDADE */
+
+@media (max-width: 1024px) {
+    .home {
+        min-height: calc(100vh - 100px);
+    }
+    
+    .home-content {
+        padding: 1.5rem;
+    }
+    
+    .top-nav ul li a {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
 }
 
-/* Ajustes para telas menores */
 @media (max-width: 768px) {
     .home {
-        padding: 0 10px;
-        min-height: 60vh;
+        padding: 1.5rem 0.5rem;
+        min-height: calc(100vh - 80px);
     }
-
+    
+    .home-content {
+        padding: 1.2rem;
+    }
+    
     .home h1 {
-        font-size: 8vw;
+        font-size: 2.2rem;
     }
-
+    
     .home h2 {
-        font-size: 4vw;
+        font-size: 1.3rem;
     }
-
-    .home main a {
-        display: inline-block;
-        text-decoration: none;
-        padding: 12px 20px;
-        background: linear-gradient(135deg, #4e4e4f, #1f1f1f);
-        border-radius: 25px;
-        font-weight: bold;
-        font-size: 1.1rem;
-        font-family: 'Georgia', serif;
-        color: white;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        width: 80%;
-        margin: 10px auto;
-    }
-
-    .home main a:hover {
-        background: linear-gradient(135deg, #1f1f1f, #4e4e4f);
-        transform: scale(1.05);
-        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .top-nav {
+    
+    .home-actions {
         flex-direction: column;
-        gap: 10px;
-    }
-
-    .top-nav ul {
-        flex-direction: column;
-        width: 100%;
         align-items: center;
     }
-
+    
+    .home-actions a {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .top-nav ul {
+        gap: 0.5rem;
+    }
+    
     .top-nav ul li a {
-        width: 80%;
-        text-align: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
 }
 
-/* Ajustes para telas grandes */
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
     .home {
-        padding: 0 20px;
-        min-height: 60vh;
+        min-height: calc(100vh - 70px);
+        padding: 1rem 0.5rem;
     }
-
+    
+    .home-content {
+        padding: 1rem;
+    }
+    
     .home h1 {
-        font-size: 4rem;
+        font-size: 1.8rem;
     }
-
+    
     .home h2 {
-        font-size: 2rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .top-nav ul {
+        gap: 0.3rem;
+    }
+    
+    .top-nav ul li a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .home h1 {
+        font-size: 1.6rem;
+    }
+    
+    .home-actions a {
+        padding: 0.7rem 1rem;
     }
 }
